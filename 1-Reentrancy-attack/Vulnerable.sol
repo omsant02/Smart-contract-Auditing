@@ -24,4 +24,8 @@ contract Vulnerable {
 
         lock=false;
     }
+
+    function callerAddress() public view returns(address caller,address origin){
+        return(msg.sender,tx.origin);
+    }
 }

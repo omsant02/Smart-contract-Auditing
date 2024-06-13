@@ -22,5 +22,9 @@ contract Attack {
         }
     }
 
+     function callerCheck() public view returns(address,address){
+        return vulnerable.callerAddress();
+    }
+
 
 }
