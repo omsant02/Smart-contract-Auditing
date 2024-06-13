@@ -7,7 +7,7 @@ contract FloatingPoint {
    uint constant public weiPerEth = 1e18;
    mapping(address => uint) public balances;
    function buyTokens()  public payable {
-        uint tokens = (msg.value/weiPerEth)*tokensPerEth;  // 0.123 rounds to 0
+        uint tokens = (msg.value*tokensPerEth)/weiPerEth;  // 0.123 rounds to 0
         balances[msg.sender] += tokens;                    // 1.123 rounds to 1
    }
 
